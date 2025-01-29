@@ -9,24 +9,25 @@
     <style>
         body {
             font-family: 'Pacifico', cursive;
-            background: url('https://i.imgur.com/mOqzM9J.jpeg') no-repeat center center fixed;
+            background: url('nendo.jpg') no-repeat center center fixed;
             background-size: cover;
             text-align: center;
             color: #fff;
+            padding: 10px;
         }
 
         .container {
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.8);
         }
 
         .gift-box {
-            width: 150px;
-            height: 150px;
+            width: 120px;
+            height: 120px;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
         }
@@ -45,10 +46,31 @@
         }
 
         .money {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #FFD700;
             font-weight: bold;
             text-shadow: 2px 2px 5px rgba(255, 255, 0, 0.9);
+        }
+
+        /* Responsive cho điện thoại */
+        @media (max-width: 768px) {
+            .gift-box {
+                width: 100px;
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .money {
+                font-size: 1.5rem;
+            }
+
+            .gift-container {
+                flex-direction: column;
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -57,22 +79,22 @@
         <h1 class="mt-6">🎉 Chúc Mừng Năm Mới! 🎊</h1>
         <p class="text-lg italic">Chọn 2 hộp quà để nhận lì xì may mắn! 🧧</p>
 
-        <div class="flex justify-center gap-8 mt-8">
+        <div class="flex justify-center gap-8 mt-8 gift-container flex-wrap">
             <!-- Hộp quà 1 -->
             <div id="box1" onclick="openGift(1)" class="gift-box">
-                <img id="gift1" src="https://i.imgur.com/8WUT6cR.png" alt="Hộp quà" class="w-full">
+                <img id="gift1" src="hopqua.png" alt="Hộp quà" class="w-full">
                 <p id="money1" class="money hidden">💰 100.000đ</p>
             </div>
 
             <!-- Hộp quà 2 -->
             <div id="box2" onclick="openGift(2)" class="gift-box">
-                <img id="gift2" src="https://i.imgur.com/8WUT6cR.png" alt="Hộp quà" class="w-full">
+                <img id="gift2" src="hopqua.png" alt="Hộp quà" class="w-full">
                 <p id="money2" class="money hidden">💰 500.000đ</p>
             </div>
 
             <!-- Hộp quà 3 -->
             <div id="box3" onclick="openGift(3)" class="gift-box">
-                <img id="gift3" src="https://i.imgur.com/8WUT6cR.png" alt="Hộp quà" class="w-full">
+                <img id="gift3" src="hopqua.png" alt="Hộp quà" class="w-full">
                 <p id="money3" class="money hidden">💰 1.000.000đ</p>
             </div>
         </div>
@@ -85,7 +107,7 @@
             if (selectedGifts.length >= 2 || selectedGifts.includes(id)) return;
 
             selectedGifts.push(id);
-            document.getElementById(`gift${id}`).src = "https://i.imgur.com/UHVfLpA.png"; // Hộp quà mở
+            document.getElementById(`gift${id}`).src = "hopqua_mo.png"; // Hộp quà mở
             document.getElementById(`money${id}`).classList.remove("hidden");
             document.getElementById(`box${id}`).classList.add("selected");
 
