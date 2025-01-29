@@ -25,14 +25,15 @@
             text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.8);
         }
 
-        /* Căn giữa hộp quà */
+        /* Luôn hiển thị hàng ngang trên mọi thiết bị */
         .gift-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap;
+            flex-direction: row;
             gap: 20px;
             margin-top: 20px;
+            flex-wrap: nowrap; /* Luôn nằm ngang, không xuống hàng */
         }
 
         .gift-box {
@@ -78,14 +79,8 @@
             }
 
             .gift-container {
-                flex-direction: row;
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .gift-container {
-                flex-direction: column;
+                flex-direction: row; /* Giữ hộp quà nằm ngang */
+                gap: 15px;
             }
         }
     </style>
