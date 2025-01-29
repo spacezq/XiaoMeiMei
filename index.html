@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lì Xì Tết - BaeMeii</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Pacifico', cursive;
+            background: url('https://i.imgur.com/Wy6jvZt.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            color: #fff;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.8);
+        }
+
+        .gift-box {
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .money {
+            font-size: 2rem;
+            color: #FFD700;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(255, 255, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mx-auto">
+        <h1 class="mt-6">🎉 Chúc Mừng Năm Mới! 🎊</h1>
+        <p class="text-lg italic">Hãy chọn một hộp quà để nhận lì xì nhé! 🧧</p>
+
+        <div class="flex justify-center gap-8 mt-8">
+            <!-- Hộp quà 1 -->
+            <div onclick="openGift(1)" class="gift-box">
+                <img id="gift1" src="https://i.imgur.com/8WUT6cR.png" alt="Hộp quà" class="w-full">
+                <p id="money1" class="money hidden">💰 250.000đ</p>
+            </div>
+
+            <!-- Hộp quà 2 -->
+            <div onclick="openGift(2)" class="gift-box">
+                <img id="gift2" src="https://i.imgur.com/8WUT6cR.png" alt="Hộp quà" class="w-full">
+                <p id="money2" class="money hidden">💰 200.000đ</p>
+            </div>
+
+            <!-- Hộp quà 3 -->
+            <div onclick="openGift(3)" class="gift-box">
+                <img id="gift3" src="https://i.imgur.com/8WUT6cR.png" alt="Hộp quà" class="w-full">
+                <p id="money3" class="money hidden">💰 300.000đ</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openGift(id) {
+            document.getElementById(`gift${id}`).src = "https://i.imgur.com/UHVfLpA.png";
+            document.getElementById(`money${id}`).classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
